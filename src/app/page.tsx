@@ -20,10 +20,6 @@ export default function Home() {
             Tarnish elden lord 3
           </h1>
         </div>
-
-        <div className="fixed top-0 h-full w-full -z-10">
-          <Three />
-        </div>
       </main>
     </SmoothScrolling>
   );
