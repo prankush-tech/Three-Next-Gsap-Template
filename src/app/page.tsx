@@ -12,6 +12,7 @@ export default function Home() {
           <h1 className="mb-[10rem] flex h-screen justify-center text-7xl items-center w-screen text-black uppercase font-bold">
             Tarnish elden lord Template Test
           </h1>
+          
 
           <h1 className="mt-[10rem] mb-[20rem] flex h-screen justify-center text-7xl items-center w-screen text-black uppercase font-bold scrollingTest">
             Tarnish elden lord 2
