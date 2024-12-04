@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import vertexShader from "../shaders/vertex.glsl";
 import fragmentShader from "../shaders/fragment.glsl";
+// import {editable as e} from '@theatre/r3f'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,7 +41,7 @@ const Plane = (props: ThreeElements["mesh"]) => {
         material.uniforms.uTime.value = clock.getElapsedTime();
       }
 
-      console.log(material.uniforms.uTime.value)
+      // console.log(material.uniforms.uTime.value)
     }
   });
 
@@ -81,7 +82,7 @@ const Plane = (props: ThreeElements["mesh"]) => {
     if (currentRef) {
       // Ensure ref is not null
       secondMoveTimeline.to(currentRef.rotation, {
-        y: 3,
+        y: Math.PI,
         duration: 0.75,
         ease: "power3.inOut",
       });
@@ -89,14 +90,17 @@ const Plane = (props: ThreeElements["mesh"]) => {
   }, []);
 
   return (
-    <mesh {...props} scale={1} ref={meshRef}>
-      <planeGeometry args={[1, 1, 1]} />
+    <mesh {...props} scale={1} ref={meshRef} 
+    // theatreKey="Plane"
+    >
+      <planeGeometry args={[1.3, 1, 40,40]} />
       <shaderMaterial
         side={THREE.DoubleSide}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         uniforms={uniforms}
         transparent={true}
+        // wireframe={true}
         depthTest={false}
         blending={THREE.AdditiveBlending}
       />
